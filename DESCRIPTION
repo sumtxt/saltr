@@ -1,0 +1,18 @@
+Package: saltr
+Title: Spicing up your model soup 
+Version: 1.0.0
+Author: Moritz Marbach <moritz.marbach@gess.ethz.ch> [aut, cre]
+Maintainer: Moritz Marbach <moritz.marbach@gess.ethz.ch>
+Description: Fit many regression models based on a vector of formulas and a fitting function.
+License: GPL-3
+Encoding: UTF-8
+BugReports: https://github.com/sumtxt/saltr/issues
+URL: https://github.com/sumtxt/saltr
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+	texreg
+Depends: 
+    R (>= 2.10)
+VignetteBuilder: knitr

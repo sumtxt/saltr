@@ -1,0 +1,55 @@
+---
+title: Saltr
+output:
+  github_document:
+    html_preview: false
+---
+
+Spicing up your model soup!
+
+Fit many regression models based on a vector of formulas and a fitting function. Minimal dependencies (only [leifeld/texreg](https://github.com/leifeld/texreg)). Should work with any formula-based fitting function. 
+
+
+```{r, echo=FALSE, messages=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, echo=TRUE, messages=FALSE}
+library(saltr)
+data(mtcars)
+
+f_lm <- c(
+  mpg ~ vs, 
+  hp ~ vs, 
+  disp ~ vs * am)
+
+fit_models(f_lm, fitter=lm, data=mtcars, 
+  output=FALSE, print=TRUE)
+
+
+f_glm <- c(
+  vs ~ mpg, 
+  am ~ mpg)
+
+mods <- fit_models(f_glm, 
+  fitter=glm, data=mtcars, 
+  family=binomial('logit'), 
+  output=TRUE, print=TRUE)
+```
+
+
+### Installation
+
+```{r, eval = FALSE}
+# Install development version from GitHub
+remotes::install_github("sumtxt/saltr")
+```
+
+
+
+
+
+
